@@ -12,8 +12,28 @@ class AlumnoController:
         self.listarAlumnos()
         self.listarEspecialidades()
         self.listarProcedencia()
+        self.ventana.tblalumnos.cellClicked.connect(self.tblAlumnosCellClick)
+        self.ventana.btnnuevo.clicked.connect(self.nuevoFormularioAlumno)
         self.ventana.show()
         app.exec()
+    
+    def nuevoFormularioAlumno(self):
+        self.ventana.txtcodigo.setText("")
+        self.ventana.txtcodigo.setEnabled(True)
+        self.ventana.txtnombres.setText("")
+        self.ventana.txtapellidos.setText("")
+        self.ventana.cbespecialidad.setCurrentIndex(0)
+        self.ventana.cbprocedencia.setCurrentIndex(0)        
+    
+    def tblAlumnosCellClick(self, fila):
+        codAlumno = self.ventana.tblalumnos.item(fila, 0).text()
+        self.ventana.txtcodigo.setText(codAlumno)
+        self.ventana.txtcodigo.setEnabled(False)
+        objAlumno = self.alumnoDao.buscarAlumno(codAlumno)
+        self.ventana.txtnombres.setText(objAlumno[1])
+        self.ventana.txtapellidos.setText(objAlumno[2])
+        self.ventana.cbespecialidad.setCurrentText(objAlumno[3])
+        self.ventana.cbprocedencia.setCurrentText(objAlumno[4]) 
 
     def listarAlumnos(self):
         listAlumnos = self.alumnoDao.listarAlumnos()

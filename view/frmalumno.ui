@@ -41,9 +41,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
+      <y>50</y>
       <width>671</width>
-      <height>201</height>
+      <height>251</height>
      </rect>
     </property>
     <property name="font">
@@ -60,7 +60,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
+       <y>80</y>
        <width>131</width>
        <height>31</height>
       </rect>
@@ -73,7 +73,7 @@
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>40</y>
+       <y>80</y>
        <width>181</width>
        <height>31</height>
       </rect>
@@ -83,7 +83,7 @@
      <property name="geometry">
       <rect>
        <x>480</x>
-       <y>40</y>
+       <y>80</y>
        <width>181</width>
        <height>31</height>
       </rect>
@@ -93,7 +93,7 @@
      <property name="geometry">
       <rect>
        <x>340</x>
-       <y>40</y>
+       <y>80</y>
        <width>131</width>
        <height>31</height>
       </rect>
@@ -106,7 +106,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>105</y>
+       <y>125</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -119,7 +119,7 @@
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>100</y>
+       <y>120</y>
        <width>181</width>
        <height>31</height>
       </rect>
@@ -129,7 +129,7 @@
      <property name="geometry">
       <rect>
        <x>340</x>
-       <y>105</y>
+       <y>125</y>
        <width>131</width>
        <height>21</height>
       </rect>
@@ -142,7 +142,7 @@
      <property name="geometry">
       <rect>
        <x>480</x>
-       <y>100</y>
+       <y>120</y>
        <width>181</width>
        <height>31</height>
       </rect>
@@ -152,7 +152,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>160</y>
+       <y>170</y>
        <width>651</width>
        <height>31</height>
       </rect>
@@ -161,14 +161,53 @@
       <string>GUARDAR</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="btnnuevo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>212</y>
+       <width>651</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>NUEVO</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtcodigo">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>40</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CODIGO:</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>270</y>
+      <y>310</y>
       <width>671</width>
-      <height>251</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="font">
@@ -185,9 +224,9 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
+       <y>40</y>
        <width>631</width>
-       <height>201</height>
+       <height>171</height>
       </rect>
      </property>
      <column>
