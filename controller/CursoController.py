@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QTableWidgetItem
 class CursoController:
 
     def __init__(self) -> None:
-        app = QtWidgets.QApplication([])
+        #app = QtWidgets.QApplication([])
         self.objCursoDao = CursoDao()
         self.ventana = uic.loadUi("view/frmcurso.ui")
         self.ventana.tblcursos.setColumnWidth(0, 80)
@@ -15,9 +15,9 @@ class CursoController:
         self.ventana.btnguardar.clicked.connect(self.btnguardarOnClick)
         self.ventana.btnnuevo.clicked.connect(self.btnnuevoOnClick)
         self.ventana.tblcursos.cellClicked.connect(self.tblCursosCellClick)
-        self.ventana.show()
+        #self.ventana.show()
         self.listarCursos()
-        app.exec()
+        #app.exec()
     
     def tblCursosCellClick(self, fila):
         codCurso = self.ventana.tblcursos.item(fila, 0).text()

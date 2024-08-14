@@ -6,7 +6,7 @@ from model.Alumno import Alumno
 class AlumnoController:
 
     def __init__(self):
-        app = QtWidgets.QApplication([])
+        #app = QtWidgets.QApplication([])
         self.ventana = uic.loadUi("view/frmalumno.ui")
         self.alumnoDao = AlumnoDao()
         self.listarAlumnos()
@@ -15,8 +15,8 @@ class AlumnoController:
         self.ventana.tblalumnos.cellClicked.connect(self.tblAlumnosCellClick)
         self.ventana.btnnuevo.clicked.connect(self.nuevoFormularioAlumno)
         self.ventana.btnguardar.clicked.connect(self.btnGuardarAlumnoClick)
-        self.ventana.show()
-        app.exec()
+        #self.ventana.show()
+        #app.exec()
     
     def btnGuardarAlumnoClick(self):
         codalumno = self.ventana.txtcodigo.text()

@@ -1,4 +1,3 @@
-from controller.CursoController import CursoController
-from controller.AlumnoController import AlumnoController
+from controller.PrincipalController import PrincipalController
 
-form = AlumnoController()
+form = PrincipalController()
