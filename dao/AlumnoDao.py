@@ -11,27 +11,25 @@ class AlumnoDao:
         cursor.execute(sql)
         return cursor.fetchall()
     
-    def buscarCurso(self, codcurso):
+    def buscarAlumno(self, idalumno):
         cursor = self.conexion.cursor()
-        sql = "SELECT idcurso, nomcurso, credito FROM curso WHERE idcurso = '{}'".format(
-            codcurso)
+        sql = "SELECT a.idalumno, a.nomalumno, a.apealumno, e.nomesp, a.proce FROM alumno a INNER JOIN especialidad e ON a.idesp = e.idesp WHERE a.idalumno = '{}'".format(
+            idalumno)
         cursor.execute(sql)
         return cursor.fetchone()
     
-    def insertarCurso(self, curso):
+    def insertarAlumno(self, alumno):
         cursor = self.conexion.cursor()
-        sql = "INSERT INTO curso VALUES ('{}', '{}', '{}')".format(curso.codcurso,
-                                                                   curso.nomcurso,
-                                                                   curso.credcurso)
+        sql = "INSERT INTO alumno (idalumno, nomalumno, apealumno, idesp, proce) VALUES ('{}', '{}', '{}', '{}', '{}')".format(
+            alumno.idalumno, alumno.nomalumno, alumno.apealumno, alumno.idesp, alumno.proce)
         cursor.execute(sql)
         self.conexion.commit()
         cursor.close()
     
-    def actualizarCurso(self, curso):
+    def actualizarAlumno(self, alumno):
         cursor = self.conexion.cursor()
-        sql = "UPDATE curso SET nomcurso = '{}', credito = '{}' where idcurso = '{}'".format(curso.nomcurso,
-                                                                   curso.credcurso,
-                                                                   curso.codcurso)
+        sql = "UPDATE alumno SET nomalumno = '{}', apealumno = '{}', idesp = '{}', proce = '{}' where idalumno = '{}'".format(
+            alumno.nomalumno, alumno.apealumno, alumno.idesp, alumno.proce, alumno.idalumno)
         cursor.execute(sql)
         self.conexion.commit()
         cursor.close()
