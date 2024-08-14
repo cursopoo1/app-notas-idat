@@ -14,8 +14,23 @@ class AlumnoController:
         self.listarProcedencia()
         self.ventana.tblalumnos.cellClicked.connect(self.tblAlumnosCellClick)
         self.ventana.btnnuevo.clicked.connect(self.nuevoFormularioAlumno)
+        self.ventana.btnguardar.clicked.connect(self.btnGuardarAlumnoClick)
         self.ventana.show()
         app.exec()
+    
+    def btnGuardarAlumnoClick(self):
+        codalumno = self.ventana.txtcodigo.text()
+        nomalumno = self.ventana.txtnombres.text()
+        apealumno = self.ventana.txtapellidos.text()
+        idespecialidad = self.ventana.cbespecialidad.currentData()
+        procedencia = self.ventana.cbprocedencia.currentText()        
+        nuevoAlumno = Alumno(codalumno, apealumno, nomalumno, idespecialidad, procedencia)
+        if self.ventana.txtcodigo.isEnabled():
+            self.alumnoDao.insertarAlumno(nuevoAlumno)
+        else:
+            self.alumnoDao.actualizarAlumno(nuevoAlumno)
+        self.listarAlumnos()     
+
     
     def nuevoFormularioAlumno(self):
         self.ventana.txtcodigo.setText("")

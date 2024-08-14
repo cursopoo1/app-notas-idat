@@ -5,3 +5,4 @@ class Alumno:
         self.apealumno = apealumno
         self.nomalumno = nomalumno
         self.idesp = idesp
+        self.proce = proce
