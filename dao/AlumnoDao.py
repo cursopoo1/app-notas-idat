@@ -33,3 +33,9 @@ class AlumnoDao:
         cursor.execute(sql)
         self.conexion.commit()
         cursor.close()
+
+    def listarEspecialidades(self):
+        cursor = self.conexion.cursor()
+        sql = "SELECT idesp, nomesp FROM especialidad"
+        cursor.execute(sql)
+        return cursor.fetchall()
